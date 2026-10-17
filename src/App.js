@@ -29,9 +29,9 @@ function App() {
 
   function divide(e) {
     e.preventDefault();
-    const inputVal = inputRef.current.value;
+    const inputVal = Number(inputRef.current.value);
 
-    if (Number(inputVal) === 0) {
+    if (inputVal === 0) {
       alert("Cannot divide by zero");
       return;
     }
