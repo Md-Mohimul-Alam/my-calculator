@@ -8,29 +8,36 @@ function App() {
 
   function plus(e) {
     e.preventDefault();
-    setResult(result + Number(inputRef.current.value));
+    const inputVal = inputRef.current.value;
+    const newResult = result + Number(inputVal);
+    setResult(newResult);
   }
 
   function minus(e) {
     e.preventDefault();
-    setResult(result - Number(inputRef.current.value));
+    const inputVal = inputRef.current.value;
+    const newResult = result - Number(inputVal);
+    setResult(newResult);
   }
 
   function times(e) {
     e.preventDefault();
-    setResult(result * Number(inputRef.current.value));
+    const inputVal = inputRef.current.value;
+    const newResult = result * Number(inputVal);
+    setResult(newResult);
   }
 
   function divide(e) {
     e.preventDefault();
-    const inputVal = Number(inputRef.current.value);
+    const inputVal = inputRef.current.value;
 
-    if (inputVal === 0) {
+    if (Number(inputVal) === 0) {
       alert("Cannot divide by zero");
       return;
     }
 
-    setResult(result / inputVal);
+    const newResult = result / inputVal;
+    setResult(newResult);
   }
 
   function resetInput(e) {
@@ -45,7 +52,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Simplest Working Calculator</h1>
+      <div>
+        <h1>Simplest Working Calculator</h1>
+      </div>
 
       <form>
         <p ref={resultRef}>{result}</p>
@@ -58,11 +67,11 @@ function App() {
         />
 
         <button onClick={plus}>add</button>
-        <button onClick={minus}>subtract</button>
-        <button onClick={times}>multiply</button>
-        <button onClick={divide}>divide</button>
-        <button onClick={resetInput}>reset input</button>
-        <button onClick={resetResult}>reset result</button>
+        <button onClick={minus}>Subtract</button>
+        <button onClick={times}>Multiply</button>
+        <button onClick={divide}>Divide</button>
+        <button onClick={resetInput}>Reset Input</button>
+        <button onClick={resetResult}>Reset Result</button>
       </form>
     </div>
   );
